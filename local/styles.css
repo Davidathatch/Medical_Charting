@@ -1,0 +1,101 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: 'Source Sans 3', sans-serif;
+}
+
+/*GLANCE HEADER*/
+header {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    align-content: stretch;
+    position: sticky;
+    top: 0;
+    gap: 25px;
+    background: #EEEEEE;
+}
+
+.img-frame {
+    display: flex;
+    justify-content: center;
+    margin: 0 0 0 15px;
+}
+
+.patient-photo {
+    position: relative;
+    width: 8em;
+    height: auto;
+    align-self: center;
+}
+
+.patient-glance-content {
+    font-weight: normal;
+    font-size: 1.25em;
+}
+
+.patient-glance-content span {
+    font-weight: bold;
+}
+
+/*CATEGORY CONTAINER*/
+.category-header {
+    font-size: 3.5em;
+    margin: 25px 0 0 2.5%;
+    font-weight: bold;
+}
+
+.sub-category-head {
+    font-size: 2em;
+    margin: 0 0 0 5%;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.sub-category-glance {
+    width: 85%;
+    margin: 20px 0 0 5%;
+    display: flex;
+    justify-content: space-between;
+    background: #EEEEEE;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 1.25em;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.glance-date {
+    flex: 1;
+}
+
+.glance-data {
+    display: flex;
+    justify-content: space-evenly;
+    flex: 4;
+}
+
+.glance-data h4 {
+    font-weight: normal;
+}
+
+.flex-container {
+    flex: 1;
+    align-self: center;
+}
+
+.glance-button {
+    background: #398AB9;
+    border-radius: 10px;
+    height: 1.75em;
+    color: white;
+    font-size: 1.25em;
+    border: none;
+    width: 50%;
+    float: right;
+}
+
+.glance-button:hover {
+    filter: brightness(.75);
+    cursor: pointer;
+}
