@@ -35,7 +35,10 @@
 </head>
 <body>
 
-    <?php include "local/patientGlanceHeader.php"; ?>
+    <?php
+        $profilePath = "assets/empty-profile.png";
+        include "local/patientGlanceHeader.php";
+    ?>
 
     <div class="category-container">
         <h1 class="category-header">Vitals</h1>
