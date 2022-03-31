@@ -1,0 +1,88 @@
+body {
+    padding: 0 0 25px 0;
+}
+.form-container {
+    display: grid;
+    grid-template-areas:
+                "form-header"
+                "column-headers"
+                "form";
+}
+.form-container {
+    width: 95%;
+    margin: 15px auto 0 auto;
+    background: #EEEEEE;
+    border-radius: 10px;
+    padding: 0 0 10px 0;
+    border: solid 3px #C4C4C4;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.25);
+}
+.container-header {
+    background: #C4C4C4;
+    width: 100%;
+    text-align: left;
+    border-radius: 10px 10px 0 0;
+    margin-top: 0;
+}
+
+/*TPR GRID*/
+.column-header-container.tpr {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 6fr 2fr;
+}
+.form-row.tpr {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 2fr 2fr 2fr 2fr;
+}
+
+/*CRIES GRID*/
+.column-header-container.cries, .column-header-container.pain, .column-header-container.nvp {
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr;
+    width: 80%;
+    margin: 0 auto;
+}
+.form-row.cries, .form-row.pain, .form-row.nvp {
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr;
+    width: 80%;
+    margin: 0 auto;
+}
+.column-header-container h3 {
+    font-weight: bolder;
+}
+.form-row h3 {
+    margin: 10px 0;
+}
+.column-header-container {
+    margin-left: 10px;
+}
+.column-header-container * {
+    font-weight: normal;
+}
+.container-header h2 {
+    margin: 10px 0 10px 25px;
+}
+input, select {
+    margin: 5px 10px 5px 0;
+    border: #C4C4C4 solid 2px;
+    border-radius: 5px;
+    color: #7e7e7e;
+    overflow: hidden;
+    height: 75%;
+    width: 95%;
+}
+option {
+    text-overflow: clip;
+}
+.form-container form {
+    margin: 0 10px 0 10px;
+}
+.row-header {
+    font-weight: lighter;
+    font-style: italic;
+}
+.form-container hr {
+    border: 3px none;
+    border-top: dashed #c4c4c4;
+}
