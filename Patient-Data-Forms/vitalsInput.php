@@ -28,6 +28,8 @@ include "../patientGlanceHeader.php"
             background: #EEEEEE;
             border-radius: 10px;
             padding: 0 0 10px 0;
+            border: solid 3px #C4C4C4;
+            box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.25);
         }
         .container-header {
             background: #C4C4C4;
@@ -38,14 +40,17 @@ include "../patientGlanceHeader.php"
         }
         .column-header-container.tpr {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr 6fr 2fr;
+            grid-template-columns: 1.5fr 1fr 1fr 6fr 2fr;
+        }
+        .column-header-container h3 {
+            font-weight: bolder;
         }
         .form-row.tpr {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr 2fr 2fr 2fr 2fr;
+            grid-template-columns: 1.5fr 1fr 1fr 2fr 2fr 2fr 2fr;
         }
         .column-header-container {
-            margin-left: 25px;
+            margin-left: 10px;
         }
         .column-header-container * {
             font-weight: normal;
@@ -55,17 +60,22 @@ include "../patientGlanceHeader.php"
         }
         input, select {
             margin: 5px 10px 5px 0;
-            border: #C4C4C4 solid 3px;
+            border: #C4C4C4 solid 2px;
             border-radius: 5px;
             color: #7e7e7e;
             overflow: hidden;
         }
         .form-container form {
-            margin: 0 0 0 25px;
+            margin: 0 10px 0 10px;
         }
         .row-header {
             font-weight: lighter;
             font-style: italic;
+        }
+        .form-container hr {
+            border: none;
+            border-top: dashed #c4c4c4;
+            border-width: 3px;
         }
     </style>
 
@@ -107,6 +117,7 @@ include "../patientGlanceHeader.php"
                 <div class="row-placeholder"></div>
                 <input type="text" id="tpr-temperature-description">
             </div>
+            <hr>
             <div class="form-row tpr">
                 <h3 class="row-header tpr">Pulse:</h3>
                 <input type="text" id="tpr-pulse-value">
@@ -141,6 +152,75 @@ include "../patientGlanceHeader.php"
 
                 </select>
                 <input type="text" id="tpr-pulse-description">
+            </div>
+            <hr>
+            <div class="form-row tpr">
+                <h3 class="row-header tpr">Respiration:</h3>
+                <input type="text" id="tpr-respiration-value">
+                <div class="row-placeholder"></div>
+                <select name="tpr-respiration-method" id="tpr-respiration-method">
+                    <option value="default">Method</option>
+                    <option value="Assisted Ventilation">Assisted Ventilation</option>
+                    <option value="Controlled">Controlled</option>
+                    <option value="Ventilation">Ventilation</option>
+                    <option value="Spontaneous">Spontaneous</option>
+                </select>
+                <div class="row-placeholder"></div>
+                <div class="row-placeholder"></div>
+                <input type="text" id="tpr-respiration-description">
+            </div>
+            <hr>
+            <div class="form-row tpr">
+                <h3 class="row-header tpr">Blood Pressure:</h3>
+                <input type="text" id="tpr-bp-value">
+                <div class="row-placeholder"></div>
+                <select name="tpr-bp-location" id="tpr-bp-location">
+                    <option value="default">Location</option>
+                    <option value="L Arm">L Arm</option>
+                    <option value="L Leg">L Leg</option>
+                    <option value="Other">Other</option>
+                    <option value="R Arm">R Arm</option>
+                    <option value="R Leg">R Leg</option>
+                </select>
+                <select name="tpr-bp-method" id="tpr-bp-method">
+                    <option value="default">Method</option>
+                    <option value="Actual">Actual</option>
+                    <option value="Cuff">Cuff</option>
+                    <option value="Doppler">Doppler</option>
+                    <option value="Non-Invasive">Non-Invasive</option>
+                    <option value="Palpated">Palpated</option>
+
+                </select>
+                <select name="tpr-bp-position" id="tpr-bp-position">
+                    <option value="default">Position</option>
+                    <option value="Lying">Lying</option>
+                    <option value="Sitting">Sitting</option>
+                    <option value="Standing">Standing</option>
+
+                </select>
+                <input type="text" id="tpr-bp-description">
+            </div>
+            <hr>
+            <div class="form-row tpr">
+                <h3 class="row-header tpr">Pulse Oximetry</h3>
+                <input type="text" id="tpr-po-value" placeholder="%">
+                <div class="row-placeholder"></div>
+                <input type="text" id="tpr-po-flow-rate" placeholder="Flow Rate (l/min)">
+                <input type="text" id="tpr-po-o2-percent" placeholder="02%">
+                <select name="tpr-po-method" id="tpr-po-method">
+                    <option value="default">Method</option>
+                    <option value="Aerosol/Humidified Mask">Aerosol/Humidified Mask</option>
+                    <option value="Face Tent">Face Tent</option>
+                    <option value="Mask">Mask</option>
+                    <option value="Nasal Cannula">Nasal Cannula</option>
+                    <option value="Non Re-Breather">Non Re-Breather</option>
+                    <option value="Partial Re-Breather">Partial Re-Breather</option>
+                    <option value="T-Piece">T-Piece</option>
+                    <option value="Tracheostomy Collar">Tracheostomy Collar</option>
+                    <option value="Ventilator">Ventilator</option>
+                    <option value="Ventury Mask">Ventury Mask</option>
+                </select>
+                <input type="text" id="tpr-po-description">
             </div>
         </form>
     </div>
