@@ -35,19 +35,94 @@ body {
     grid-template-columns: 1.5fr 1fr 1fr 2fr 2fr 2fr 2fr;
 }
 
-/*CRIES GRID*/
-.column-header-container.cries, .column-header-container.pain, .column-header-container.nvp {
+/*CRIES, NONVERBAL PAIN, & RASS GRID*/
+.column-header-container.cries, .column-header-container.pain, .column-header-container.nvp, .column-header-container.rass {
     display: grid;
     grid-template-columns: 2fr 2fr 2fr;
     width: 80%;
     margin: 0 auto;
 }
-.form-row.cries, .form-row.pain, .form-row.nvp {
+.form-row.cries, .form-row.pain, .form-row.nvp, .form-row.rass {
     display: grid;
     grid-template-columns: 2fr 2fr 2fr;
     width: 80%;
     margin: 0 auto;
 }
+
+/*GROWTH GRID*/
+.column-header-container.growth {
+    display: grid;
+    grid-template-columns: 2.1fr 1fr 1fr 2fr 3fr;
+}
+.form-row.growth {
+    display: grid;
+    grid-template-columns: 2.1fr 1fr 1fr 2fr 3fr;
+}
+
+/*PAIN SCALE GRID*/
+.column-header-container.pain-scale {
+    display: grid;
+    grid-template-columns: 1fr 6fr;
+}
+.form-row.pain-scale {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+/*INTAKE OUTPUT GRID*/
+.column-header-container.io {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 4fr 2fr;
+}
+.form-row.io {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 2fr 2fr 2fr;
+}
+
+/*PO Intake & GLUCOSE Grid*/
+.column-header-container.po, .column-header-container.glucose {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 2fr;
+    width: 50%;
+    margin: 0 auto;
+}
+.form-row.po, .form-row.glucose {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 2fr;
+    width: 50%;
+    margin: 0 auto;
+}
+
+/*SURVEY GRID*/
+.column-header-container.survey {
+    display: grid;
+    grid-template-columns: 7fr;
+    width: 90%;
+    margin: 0 auto;
+}
+.form-row.survey{
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 2fr;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.radio-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: center;
+}
+
+.radio-group h4{
+    margin: auto 0;
+    font-weight: normal;
+}
+
+.radio-group input[type=radio] {
+    margin: auto 0;
+}
+
 .column-header-container h3 {
     font-weight: bolder;
 }
@@ -64,7 +139,7 @@ body {
     margin: 10px 0 10px 25px;
     color: white;
 }
-input, select {
+input[type=text], select {
     margin: 5px 10px 5px 0;
     border: #C4C4C4 solid 2px;
     border-radius: 5px;
@@ -87,4 +162,11 @@ option {
     border:none;
     border-top: 2px dotted #c4c4c4;
     margin: 0;
+}
+.pain-scale-container {
+    padding: 0 10px;
+}
+.pain-scale-container {
+    margin-top: 10px;
+    text-align: center;
 }
