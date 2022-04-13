@@ -13,61 +13,7 @@ include "../patientGlanceHeader.php"
     <title>Document</title>
 
     <link rel="stylesheet" href="../local/styles.css">
-
-    <style>
-        .form-container.tpr {
-            display: grid;
-            grid-template-areas:
-                "form-header"
-                "column-headers"
-                "form";
-        }
-        .form-container {
-            width: 95%;
-            margin: 15px auto 0 auto;
-            background: #EEEEEE;
-            border-radius: 10px;
-            padding: 0 0 10px 0;
-        }
-        .container-header {
-            background: #C4C4C4;
-            width: 100%;
-            text-align: left;
-            border-radius: 10px 10px 0 0;
-            margin-top: 0;
-        }
-        .column-header-container.tpr {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr 6fr 2fr;
-        }
-        .form-row.tpr {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr 2fr 2fr 2fr 2fr;
-        }
-        .column-header-container {
-            margin-left: 25px;
-        }
-        .column-header-container * {
-            font-weight: normal;
-        }
-        .container-header h2 {
-            margin: 10px 0 10px 25px;
-        }
-        input, select {
-            margin: 5px 10px 5px 0;
-            border: #C4C4C4 solid 3px;
-            border-radius: 5px;
-            color: #7e7e7e;
-            overflow: hidden;
-        }
-        .form-container form {
-            margin: 0 0 0 25px;
-        }
-        .row-header {
-            font-weight: lighter;
-            font-style: italic;
-        }
-    </style>
+    <link rel="stylesheet" href="../local/formStyles.css">
 
 </head>
 <body>
@@ -84,7 +30,8 @@ include "../patientGlanceHeader.php"
             <h3 class="column-header" style="grid-column: 4">Qualifier(s)</h3>
             <h3 class="column-header" style="grid-column: 5">Description</h3>
         </div>
-        <form action="server.php" method="post" style="grid-area: form">
+        <form action="server.php" method="post" style="grid-area: form" class="tpr-form">
+            <hr>
             <div class="form-row tpr">
                 <h3 class="row-header tpr">Temperature:</h3>
                 <input type="text" id="tpr-temperature-value">
@@ -107,6 +54,7 @@ include "../patientGlanceHeader.php"
                 <div class="row-placeholder"></div>
                 <input type="text" id="tpr-temperature-description">
             </div>
+            <hr>
             <div class="form-row tpr">
                 <h3 class="row-header tpr">Pulse:</h3>
                 <input type="text" id="tpr-pulse-value">
@@ -142,8 +90,248 @@ include "../patientGlanceHeader.php"
                 </select>
                 <input type="text" id="tpr-pulse-description">
             </div>
+            <hr>
+            <div class="form-row tpr">
+                <h3 class="row-header tpr">Respiration:</h3>
+                <input type="text" id="tpr-respiration-value">
+                <div class="row-placeholder"></div>
+                <select name="tpr-respiration-method" id="tpr-respiration-method">
+                    <option value="default">Method</option>
+                    <option value="Assisted Ventilation">Assisted Ventilation</option>
+                    <option value="Controlled">Controlled</option>
+                    <option value="Ventilation">Ventilation</option>
+                    <option value="Spontaneous">Spontaneous</option>
+                </select>
+                <div class="row-placeholder"></div>
+                <div class="row-placeholder"></div>
+                <input type="text" id="tpr-respiration-description">
+            </div>
+            <hr>
+            <div class="form-row tpr">
+                <h3 class="row-header tpr">Blood Pressure:</h3>
+                <input type="text" id="tpr-bp-value">
+                <div class="row-placeholder"></div>
+                <select name="tpr-bp-location" id="tpr-bp-location">
+                    <option value="default">Location</option>
+                    <option value="L Arm">L Arm</option>
+                    <option value="L Leg">L Leg</option>
+                    <option value="Other">Other</option>
+                    <option value="R Arm">R Arm</option>
+                    <option value="R Leg">R Leg</option>
+                </select>
+                <select name="tpr-bp-method" id="tpr-bp-method">
+                    <option value="default">Method</option>
+                    <option value="Actual">Actual</option>
+                    <option value="Cuff">Cuff</option>
+                    <option value="Doppler">Doppler</option>
+                    <option value="Non-Invasive">Non-Invasive</option>
+                    <option value="Palpated">Palpated</option>
+
+                </select>
+                <select name="tpr-bp-position" id="tpr-bp-position">
+                    <option value="default">Position</option>
+                    <option value="Lying">Lying</option>
+                    <option value="Sitting">Sitting</option>
+                    <option value="Standing">Standing</option>
+
+                </select>
+                <input type="text" id="tpr-bp-description">
+            </div>
+            <hr>
+            <div class="form-row tpr">
+                <h3 class="row-header tpr">Pulse Oximetry</h3>
+                <input type="text" id="tpr-po-value" placeholder="%">
+                <div class="row-placeholder"></div>
+                <input type="text" id="tpr-po-flow-rate" placeholder="Flow Rate (l/min)">
+                <input type="text" id="tpr-po-o2-percent" placeholder="02%">
+                <select name="tpr-po-method" id="tpr-po-method">
+                    <option value="default">Method</option>
+                    <option value="Aerosol/Humidified Mask">Aerosol/Humidified Mask</option>
+                    <option value="Face Tent">Face Tent</option>
+                    <option value="Mask">Mask</option>
+                    <option value="Nasal Cannula">Nasal Cannula</option>
+                    <option value="Non Re-Breather">Non Re-Breather</option>
+                    <option value="Partial Re-Breather">Partial Re-Breather</option>
+                    <option value="T-Piece">T-Piece</option>
+                    <option value="Tracheostomy Collar">Tracheostomy Collar</option>
+                    <option value="Ventilator">Ventilator</option>
+                    <option value="Ventury Mask">Ventury Mask</option>
+                </select>
+                <input type="text" id="tpr-po-description">
+            </div>
         </form>
     </div>
+
+    <div class="form-container pain">
+        <div class="container-header pain"  style="grid-area: form-header">
+            <h2>Pain</h2>
+        </div>
+        <div class="column-header-container pain" style="grid-area: column-headers">
+            <h3 class="column-header" style="grid-column: 1">Vital</h3>
+            <h3 class="column-header" style="grid-column: 2">Value</h3>
+            <h3 class="column-header" style="grid-column: 3">Description</h3>
+        </div>
+        <form action="server.php" method="post" style="grid-area: form" class="pain-form">
+            <hr>
+            <div class="form-row pain">
+                <h3 class="row-header pain">Pain:</h3>
+                <select name="pain-value" id="pain-value">
+                    <option value="default">Value</option>
+                    <option value="0-No Pain">0-No Pain</option>
+                    <option value="1-Slightly Uncomfortable">1-Slightly Uncomfortable</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10-Worst Imaginable">10-Worst Imaginable</option>
+                    <option value="11-Unable to Respond">11-Unable to Respond</option>
+                </select>
+                <input type="text" id="pain-description">
+            </div>
+        </form>
+    </div>
+
+    <div class="form-container cries">
+        <div class="container-header cries"  style="grid-area: form-header">
+            <h2>CRIES Scale</h2>
+        </div>
+        <div class="column-header-container cries" style="grid-area: column-headers">
+            <h3 class="column-header" style="grid-column: 1">Vital</h3>
+            <h3 class="column-header" style="grid-column: 2">Value</h3>
+            <h3 class="column-header" style="grid-column: 3">Description</h3>
+        </div>
+        <form action="server.php" method="post" style="grid-area: form" class="cries-form">
+            <hr>
+            <div class="form-row cries">
+                <h3 class="row-header cries">Crying:</h3>
+                <select name="crying-value" id="crying-value">
+                    <option value="default">Value</option>
+                    <option value="0-No cry or cry that is non high-pitched">0-No cry or cry that is non high-pitched</option>
+                    <option value="1-Cry high-pitched but baby is easily consolable">1-Cry high-pitched but baby is easily consolable</option>
+                    <option value="2-Cry high-pitched but baby is inconsolable">2-Cry high-pitched but baby is inconsolable</option>
+                </select>
+                <input type="text" id="crying-description">
+            </div>
+
+            <div class="form-row cries">
+                <h3 class="row-header cries">Requires O2 for SaO2 < 95%:</h3>
+                <select name="req-o2-value" id="req-o2-value">
+                    <option value="default">Value</option>
+                    <option value="0-No oxygen required">0-No oxygen required</option>
+                    <option value="1-<30% oxygen required">1-<30% oxygen required</option>
+                    <option value="1->30% oxygen required">1->30% oxygen required</option>
+                </select>
+                <input type="text" id="req-o2-description">
+            </div>
+
+            <div class="form-row cries">
+                <h3 class="row-header cries">Increased vital Signs (BP & HR):</h3>
+                <select name="inc-vi-value" id="inc-vi-value">
+                    <option value="default">Value</option>
+                    <option value="0-Both HR & BP unchanged or less than baseline">0-0-Both HR & BP unchanged or less than baseline</option>
+                    <option value="1-HR & BP increased but increase in <20% of baseline">1-HR & BP increased but increase in <20% of baseline</option>
+                    <option value="2-HR or BP is increased in >20% over baseline">2-HR or BP is increased in >20% over baseline</option>
+                </select>
+                <input type="text" id="inc-vi-description">
+            </div>
+
+            <div class="form-row cries">
+                <h3 class="row-header cries">Expression:</h3>
+                <select name="expression-value" id="expression-value">
+                    <option value="default">Value</option>
+                    <option value="0-No grimace present">0-No grimace present</option>
+                    <option value="1-Grimace alone is present">1-Grimace alone is present</option>
+                    <option value="2-Grimace and non-cry vocalization grunt is present">2-Grimace and non-cry vocalization grunt is present</option>
+                </select>
+                <input type="text" id="expression-description">
+            </div>
+
+            <div class="form-row cries">
+                <h3 class="row-header cries">Sleepless:</h3>
+                <select name="sleepless-value" id="sleepless-value">
+                    <option value="default">Value</option>
+                    <option value="0-Child has been continuously asleep">0-Child has been continuously asleep</option>
+                    <option value="1-Child has awakened at frequent intervals">1-Child has awakened at frequent intervals</option>
+                    <option value="2-Child has been awake constantly">2-Child has been awake constantly</option>
+                </select>
+                <input type="text" id="sleepless-description">
+            </div>
+        </form>
+    </div>
+
+    <div class="form-container nvp">
+        <div class="container-header nvp"  style="grid-area: form-header">
+            <h2>CRIES Scale</h2>
+        </div>
+        <div class="column-header-container nvp" style="grid-area: column-headers">
+            <h3 class="column-header" style="grid-column: 1">Vital</h3>
+            <h3 class="column-header" style="grid-column: 2">Value</h3>
+            <h3 class="column-header" style="grid-column: 3">Description</h3>
+        </div>
+        <form action="server.php" method="post" style="grid-area: form" class="nvp-form">
+            <hr>
+            <div class="form-row cries">
+                <h3 class="row-header cries">Face:</h3>
+                <select name="face-value" id="face-value">
+                    <option value="default">Value</option>
+                    <option value="0-No particular expression or smile">0-No particular expression or smile</option>
+                    <option value="1-Occasional grimace, tearing, frowning, wrinkled forehead">1-Occasional grimace, tearing, frowning, wrinkled forehead</option>
+                    <option value="2-Frequent grimace, tearing, frowning, wrinkled forehead">2-Frequent grimace, tearing, frowning, wrinkled forehead</option>
+                </select>
+                <input type="text" id="face-description">
+            </div>
+
+            <div class="form-row cries">
+                <h3 class="row-header cries">Activity:</h3>
+                <select name="activity-value" id="activity-value">
+                    <option value="default">Value</option>
+                    <option value="0-No particular expression or smile">0-No particular expression or smile</option>
+                    <option value="1-Occasional grimace, tearing, frowning, wrinkled forehead">1-Occasional grimace, tearing, frowning, wrinkled forehead</option>
+                    <option value="2-Frequent grimace, tearing, frowning, wrinkled forehead">2-Frequent grimace, tearing, frowning, wrinkled forehead</option>
+                </select>
+                <input type="text" id="activity-description">
+            </div>
+
+            <div class="form-row cries">
+                <h3 class="row-header cries">Gaurding:</h3>
+                <select name="gaurding-value" id="gaurding-value">
+                    <option value="default">Value</option>
+                    <option value="0-Lying quietly, no positioning of hand over areas of body">0-Lying quietly, no positioning of hand over areas of body</option>
+                    <option value="1-Splinting areas of the body, tense">1-Splinting areas of the body, tense</option>
+                    <option value="2-Rigid, stiff">2-Rigid, stiff</option>
+                </select>
+                <input type="text" id="gaurding-description">
+            </div>
+
+            <div class="form-row cries">
+                <h3 class="row-header cries">Physiology:</h3>
+                <select name="physiology-value" id="physiology-value">
+                    <option value="default">Value</option>
+                    <option value="0-Stable vital signs">0-Stable vital signs</option>
+                    <option value="1-Change in any of the following: SBP>20mmHg,HR>20/min">1-Change in any of the following: SBP>20mmHg,HR>20/min</option>
+                    <option value="2-Change in any of the following: SBP>30mmHg,HR>25/min">2-Change in any of the following: SBP>30mmHg,HR>25/min</option>
+                </select>
+                <input type="text" id="physiology-description">
+            </div>
+
+            <div class="form-row cries">
+                <h3 class="row-header cries">Respiratory:</h3>
+                <select name="Respiratory-value" id="Respiratory-value">
+                    <option value="default">Value</option>
+                    <option value="0-Baseline RR/SpO2, Compliant with ventilator">0-Baseline RR/SpO2, Compliant with ventilator</option>
+                    <option value="1-RR > 10 above baseline, or 5% decrease in SpO2, Mild asynchrony with ventilator">1-RR > 10 above baseline, or 5% decrease in SpO2, Mild asynchronous with ventilator</option>
+                    <option value="2-RR > 20 above baseline, or 10% decrease in SpO2, Severe asynchrony with ventilator">2-RR > 20 above baseline, or 10% decrease in SpO2, Severe asynchrony with ventilator</option>
+                </select>
+                <input type="text" id="Respiratory-description">
+            </div>
+        </form>
+    </div>
+
+    
 
 </body>
 </html>
