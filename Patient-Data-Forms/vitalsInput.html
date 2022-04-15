@@ -13,7 +13,6 @@
 
 </head>
 <body>
-
 <header>
     <div class="header-content">
         <div class="img-frame">
@@ -46,6 +45,7 @@
                 <h3 class="row-header tpr">Temperature:</h3>
                 <input type="text" id="tpr-temperature-value">
                 <select name="tpr-temperature-unit" id="tpr-temperature-unit">
+                    <option value="default"></option>
                     <option value="C">C</option>
                     <option value="F">F</option>
                 </select>
@@ -306,14 +306,14 @@
             </div>
             <hr>
             <div class="form-row nvp">
-                <h3 class="row-header nvp">Gaurding:</h3>
-                <select name="gaurding-value" id="gaurding-value">
+                <h3 class="row-header nvp">Guarding:</h3>
+                <select name="guarding-value" id="guarding-value">
                     <option value="default">Value</option>
                     <option value="0-Lying quietly, no positioning of hand over areas of body">0-Lying quietly, no positioning of hand over areas of body</option>
                     <option value="1-Splinting areas of the body, tense">1-Splinting areas of the body, tense</option>
                     <option value="2-Rigid, stiff">2-Rigid, stiff</option>
                 </select>
-                <input type="text" id="gaurding-description">
+                <input type="text" id="guarding-description">
             </div>
             <hr>
             <div class="form-row nvp">
@@ -329,13 +329,13 @@
             <hr>
             <div class="form-row nvp">
                 <h3 class="row-header nvp">Respiratory:</h3>
-                <select name="Respiratory-value" id="Respiratory-value">
+                <select name="respiratory-value" id="respiratory-value">
                     <option value="default">Value</option>
                     <option value="0-Baseline RR/SpO2, Compliant with ventilator">0-Baseline RR/SpO2, Compliant with ventilator</option>
                     <option value="1-RR > 10 above baseline, or 5% decrease in SpO2, Mild asynchrony with ventilator">1-RR > 10 above baseline, or 5% decrease in SpO2, Mild asynchronous with ventilator</option>
                     <option value="2-RR > 20 above baseline, or 10% decrease in SpO2, Severe asynchrony with ventilator">2-RR > 20 above baseline, or 10% decrease in SpO2, Severe asynchrony with ventilator</option>
                 </select>
-                <input type="text" id="Respiratory-description">
+                <input type="text" id="respiratory-description">
             </div>
         </form>
     </div>
@@ -1315,6 +1315,8 @@
         </form>
     </div>
 
+    <button id="vital-submit">Submit</button>
 
+    <script src="../local/app.js"></script>
 </body>
 </html>
