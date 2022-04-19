@@ -1,3 +1,5 @@
+//TODO VALIDATE DATA
+
 let vitalsSubmit = document.getElementById("vital-submit");
 
 vitalsSubmit.addEventListener("click", getData);
@@ -127,14 +129,63 @@ function getData() {
     //PAIN SCALE DATA
     let painScaleValues = {};
 
-    //PAIN DATA
+    //PAIN VALUE
     painScaleValues["pain-scale-value"] = quickRadio("pain-scale-value");
 
     //ADD DATA TO "postValues"
     postValues["pain-scale"] = painScaleValues;
 
+
+    //RASS DATA
+    let rassValues = {};
+
+    //LEVEL OF CONSCIOUSNESS VALUES
+    rassValues["loc-value"] = quickId("loc-value");
+    rassValues["loc-description"] = quickId("loc-description");
+
+    //ADD DATA TO "postValues"
+    postValues["rass"] = rassValues;
+
+
+    //GROWTH DATA
+    let growthData = {};
+
+    //WEIGHT VALUES
+    growthData["weight-value"] = quickId("weight-value");
+    growthData["weight-unit"] = quickId("weight-unit");
+    growthData["weight-percentile"] = quickId("weight-percentile");
+    growthData["weight-description"] = quickId("weight-description");
+
+    //HEIGHT/LENGTH VALUES
+    growthData["height-length-value"] = quickId("height-length-value");
+    growthData["height-length-unit"] = quickId("height-length-unit");
+    growthData["height-length-percentile"] = quickId("height-length-percentile");
+    growthData["height-length-description"] = quickId("height-length-description");
+
+    //WAIST OR HEAD CIRCUMFERENCE VALUES
+    growthData["circumference-value"] = quickId("circumference-value");
+    growthData["circumference-unit"] = quickId("circumference-unit");
+    growthData["circumference-percentile"] = quickId("circumference-percentile");
+    growthData["circumference-description"] = quickId("circumference-description");
+
+    //BMI VALUES
+    growthData["bmi-value"] = quickId("bmi-value");
+    growthData["bmi-description"] = quickId("bmi-description");
+
+    //ADD DATA TO "postValues"
+    postValues["growth"] = growthData;
+
+
+    //TODO INTAKE OUTPUT VALUES
+
+    //TODO PO INTAKE VALUES
+
+    //TODO CAPILLARY BLOOD GLUCOSE READING VALUES
+
+    //TODO SURVEY VALUES
 }
 
+//Takes id of HTML input element as parameter, returns value of element if not empty; if empty, it returns null
 function quickId(elementId) {
     if (document.getElementById(elementId).value !== "" && document.getElementById(elementId).value !== "default") {
         return  document.getElementById(elementId).value;
@@ -143,6 +194,8 @@ function quickId(elementId) {
     }
 }
 
+//Takes name of html radio element as parameter and returns the value of the selected radio button, if none is checked
+//returns null
 function quickRadio(elementName) {
     let radioButtons = document.getElementsByName(elementName);
 
