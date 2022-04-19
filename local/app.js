@@ -176,7 +176,29 @@ function getData() {
     postValues["growth"] = growthData;
 
 
-    //TODO INTAKE OUTPUT VALUES
+
+    // IO DATA
+    let ioData = {};
+
+    //INTAKE VALUES
+    ioData["intake-value"] = quickId("intake-value");
+    ioData["intake-method"] = quickId("intake-method");
+    ioData["intake-percent-consumed"] = quickId("percent-consumed");
+    ioData["intake-description"] = quickId("intake-description");
+
+    //OUTPUT VALUES
+    ioData["output-value"] = quickId("output-value");
+    ioData["output-method"] = quickId("output-method");
+    ioData["output-description"] = quickId("output-description");
+
+    //IO TOTAL VALUES
+    ioData["io-total-value"] = quickId("io-total-value");
+    ioData["io-total-method"] = quickId("io-total-method");
+    ioData["io-total-time"] = quickId("io-total-time");
+    ioData["io-total-description"] = quickId("io-total-description");
+
+    //ADD DATA TO "postValues"
+    postValues["io"] = ioData;
 
     //TODO PO INTAKE VALUES
 
