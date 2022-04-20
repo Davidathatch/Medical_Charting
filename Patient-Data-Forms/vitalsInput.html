@@ -434,14 +434,14 @@
                 <h3 class="row-header">Weight:</h3>
                 <input type="text" id="weight-value">
                 <select name="weight-unit" id="weight-unit">
-                    <option value="Default">Unit</option>
+                    <option value="default">Unit</option>
                     <option value="lb">lb</option>
                     <option value="oz">oz</option>
                     <option value="kg">kg</option>
                     <option value="g">g</option>
                 </select>
                 <select name="weight-percentile" id="weight-percentile">
-                    <option value="Default">Growth Chart</option>
+                    <option value="default">Growth Chart</option>
                     <option value="<5th Percentile>"><5th Percentile></option>
                     <option value="5th Percentile">5th Percentile</option>
                     <option value="10th Percentile">10th Percentile</option>
@@ -459,12 +459,12 @@
                 <h3 class="row-header">Height/Length:</h3>
                 <input type="text" id="height-length-value">
                 <select name="height-length-unit" id="height-length-unit">
-                    <option value="Default">Unit</option>
+                    <option value="default">Unit</option>
                     <option value="in">in</option>
                     <option value="cm">cm</option>
                 </select>
                 <select name="height-length-percentile" id="height-length-percentile">
-                    <option value="Default">Growth Chart</option>
+                    <option value="default">Growth Chart</option>
                     <option value="<5th Percentile>"><5th Percentile></option>
                     <option value="5th Percentile">5th Percentile</option>
                     <option value="10th Percentile">10th Percentile</option>
@@ -482,12 +482,12 @@
                 <h3 class="row-header">Waist or Head Circumference:</h3>
                 <input type="text" id="circumference-value">
                 <select name="circumference-unit" id="circumference-unit">
-                    <option value="Default">Unit</option>
+                    <option value="default">Unit</option>
                     <option value="in">in</option>
                     <option value="cm">cm</option>
                 </select>
                 <select name="circumference-percentile" id="circumference-percentile">
-                    <option value="Default">Growth Chart</option>
+                    <option value="default">Growth Chart</option>
                     <option value="<5th Percentile>"><5th Percentile></option>
                     <option value="5th Percentile">5th Percentile</option>
                     <option value="10th Percentile">10th Percentile</option>
@@ -529,7 +529,7 @@
                 <input type="text" id="intake-value">
                 <h4 style="margin: auto 0">ml</h4>
                 <select name="intake-method" id="intake-method">
-                    <option value="Default">Method</option>
+                    <option value="default">Method</option>
                     <option value="Oral">Oral</option>
                     <option value="Intravenous">Intravenous</option>
                     <option value="Blood">Blood</option>
@@ -557,7 +557,7 @@
                 <input type="text" id="output-value">
                 <h4 style="margin: auto 0">ml</h4>
                 <select name="output-method" id="output-method">
-                    <option value="Default">Method</option>
+                    <option value="default">Method</option>
                     <option value="Emesis">Emesis</option>
                     <option value="Urine">Urine</option>
                     <option value="NG">NG</option>
@@ -575,13 +575,13 @@
                 <input type="text" id="total-io-value">
                 <h4 style="margin: auto 0">ml</h4>
                 <select name="total-io-method" id="total-io-method">
-                    <option value="Default">Fluid Shift</option>
+                    <option value="default">Fluid Shift</option>
                     <option value="Loss">Loss</option>
                     <option value="None">None</option>
                     <option value="Gain">Gain</option>
                 </select>
                 <select name="total-time-io" id="total-time-io">
-                    <option value="Default">Total Time</option>
+                    <option value="default">Total Time</option>
                     <option value="8 Hours">8 Hours</option>
                     <option value="12 Hours">12 Hours</option>
                     <option value="24 Hours">24 Hours</option>
@@ -625,10 +625,10 @@
         <form action="server.php" method="post" style="grid-area: form" class="glucose-form">
             <hr>
             <div class="form-row glucose">
-                <h3 class="row-header">Meal Consumed:</h3>
+                <h3 class="row-header">Capillary Blood Glucose Reading:</h3>
                 <input type="text" id="glucose-value">
                 <select name="glucose-unit" id="glucose-unit">
-                    <option value="Default">Unit</option>
+                    <option value="default">Unit</option>
                     <option value="mg/dL">mg/dL</option>
                     <option value="mmol/L">mmol/L</option>
                 </select>
@@ -725,17 +725,17 @@
                 <h3 class="row-header">Wounds/Breaks/Rash/Lesions:</h3>
                 <div class="radio-group">
                     <h4>Not Assessed</h4>
-                    <input type="radio" name="WBRL-value" value="Not Assessed">
+                    <input type="radio" name="wrbl-value" value="Not Assessed">
                 </div>
                 <div class="radio-group">
                     <h4>WNL</h4>
-                    <input type="radio" name="WBRL-value" value="WNL">
+                    <input type="radio" name="wrbl-value" value="WNL">
                 </div>
                 <div class="radio-group">
                     <h4>Abnormal</h4>
-                    <input type="radio" name="WBRL-value" value="Abnormal">
+                    <input type="radio" name="wrbl-value" value="Abnormal">
                 </div>
-                <input type="text" id="WBRL-description">
+                <input type="text" id="wrbl-description">
             </div>
             <hr>
             <div class="form-row survey">
@@ -956,34 +956,34 @@
                 <h3 class="row-header">Chest Shape and Appearance:</h3>
                 <div class="radio-group">
                     <h4>Not Assessed</h4>
-                    <input type="radio" name="CSA-value" value="Not Assessed">
+                    <input type="radio" name="csa-value" value="Not Assessed">
                 </div>
                 <div class="radio-group">
                     <h4>WNL</h4>
-                    <input type="radio" name="CSA-value" value="WNL">
+                    <input type="radio" name="csa-value" value="WNL">
                 </div>
                 <div class="radio-group">
                     <h4>Abnormal</h4>
-                    <input type="radio" name="CSA-value" value="Abnormal">
+                    <input type="radio" name="csa-value" value="Abnormal">
                 </div>
-                <input type="text" id="CSA-description">
+                <input type="text" id="csa-description">
             </div>
             <hr>
             <div class="form-row survey">
                 <h3 class="row-header">Drains/ Lines/ Sutures/ Staples:</h3>
                 <div class="radio-group">
                     <h4>Not Assessed</h4>
-                    <input type="radio" name="DLSS-value" value="Not Assessed">
+                    <input type="radio" name="dlss-value" value="Not Assessed">
                 </div>
                 <div class="radio-group">
                     <h4>WNL</h4>
-                    <input type="radio" name="DLSS-value" value="WNL">
+                    <input type="radio" name="dlss-value" value="WNL">
                 </div>
                 <div class="radio-group">
                     <h4>Abnormal</h4>
-                    <input type="radio" name="DLSS-value" value="Abnormal">
+                    <input type="radio" name="dlss-value" value="Abnormal">
                 </div>
-                <input type="text" id="DLSS-description">
+                <input type="text" id="dlss-description">
             </div>
             <hr>
     <!--            ABDOMEN/ COCCYX/ GENITALIA SURVEY-->
@@ -995,17 +995,17 @@
         <h3 class="row-header">Abdominal Shape and Appearance:</h3>
         <div class="radio-group">
             <h4>Not Assessed</h4>
-            <input type="radio" name="ASA-value" value="Not Assessed">
+            <input type="radio" name="asa-value" value="Not Assessed">
         </div>
         <div class="radio-group">
             <h4>WNL</h4>
-            <input type="radio" name="ASA-value" value="WNL">
+            <input type="radio" name="asa-value" value="WNL">
         </div>
         <div class="radio-group">
             <h4>Abnormal</h4>
-            <input type="radio" name="ASA-value" value="Abnormal">
+            <input type="radio" name="asa-value" value="Abnormal">
         </div>
-        <input type="text" id="ASA-description">
+        <input type="text" id="asa-description">
     </div>
     <hr>
     <div class="form-row survey">
@@ -1029,34 +1029,34 @@
         <h3 class="row-header">Tenderness/ Lumps/ Bladder Distension:</h3>
         <div class="radio-group">
             <h4>Not Assessed</h4>
-            <input type="radio" name="TLBD-value" value="Not Assessed">
+            <input type="radio" name="tlbd-value" value="Not Assessed">
         </div>
         <div class="radio-group">
             <h4>WNL</h4>
-            <input type="radio" name="TLBD-value" value="WNL">
+            <input type="radio" name="tlbd-value" value="WNL">
         </div>
         <div class="radio-group">
             <h4>Abnormal</h4>
-            <input type="radio" name="TLBD-value" value="Abnormal">
+            <input type="radio" name="tlbd-value" value="Abnormal">
         </div>
-        <input type="text" id="TLBD-description">
+        <input type="text" id="tlbd-description">
     </div>
     <hr>
     <div class="form-row survey">
         <h3 class="row-header">Tubes/ Drains/ Catherter Sites:</h3>
         <div class="radio-group">
             <h4>Not Assessed</h4>
-            <input type="radio" name="TDCS-value" value="Not Assessed">
+            <input type="radio" name="tdcs-value" value="Not Assessed">
         </div>
         <div class="radio-group">
             <h4>WNL</h4>
-            <input type="radio" name="TDCS-value" value="WNL">
+            <input type="radio" name="tdcs-value" value="WNL">
         </div>
         <div class="radio-group">
             <h4>Abnormal</h4>
-            <input type="radio" name="TDCS-value" value="Abnormal">
+            <input type="radio" name="tdcs-value" value="Abnormal">
         </div>
-        <input type="text" id="TDCS-description">
+        <input type="text" id="tdcs-description">
     </div>
     <hr>
     <div class="form-row survey">
@@ -1085,17 +1085,17 @@
         <h3 class="row-header">Temperature/ Color/ Capillary Refill:</h3>
         <div class="radio-group">
             <h4>Not Assessed</h4>
-            <input type="radio" name="TCCR-value" value="Not Assessed">
+            <input type="radio" name="tccr-value" value="Not Assessed">
         </div>
         <div class="radio-group">
             <h4>WNL</h4>
-            <input type="radio" name="TCCR-value" value="WNL">
+            <input type="radio" name="tccr-value" value="WNL">
         </div>
         <div class="radio-group">
             <h4>Abnormal</h4>
-            <input type="radio" name="TCCR-value" value="Abnormal">
+            <input type="radio" name="tccr-value" value="Abnormal">
         </div>
-        <input type="text" id="TCCR-description">
+        <input type="text" id="tccr-description">
     </div>
     <hr>
     <div class="form-row survey">
@@ -1136,34 +1136,34 @@
         <h3 class="row-header">ROM:</h3>
         <div class="radio-group">
             <h4>Not Assessed</h4>
-            <input type="radio" name="ROM-value" value="Not Assessed">
+            <input type="radio" name="rom-value" value="Not Assessed">
         </div>
         <div class="radio-group">
             <h4>WNL</h4>
-            <input type="radio" name="ROM-value" value="WNL">
+            <input type="radio" name="rom-value" value="WNL">
         </div>
         <div class="radio-group">
             <h4>Abnormal</h4>
-            <input type="radio" name="ROM-value" value="Abnormal">
+            <input type="radio" name="rom-value" value="Abnormal">
         </div>
-        <input type="text" id="ROM-description">
+        <input type="text" id="rom-description">
     </div>
     <hr>
     <div class="form-row survey">
         <h3 class="row-header">Tubes/ Drains/ Staples/ Sutures/ Catheter Sites:</h3>
         <div class="radio-group">
             <h4>Not Assessed</h4>
-            <input type="radio" name="TDSSC-value" value="Not Assessed">
+            <input type="radio" name="tdsscs-value" value="Not Assessed">
         </div>
         <div class="radio-group">
             <h4>WNL</h4>
-            <input type="radio" name="TDSSC-value" value="WNL">
+            <input type="radio" name="tdsscs-value" value="WNL">
         </div>
         <div class="radio-group">
             <h4>Abnormal</h4>
-            <input type="radio" name="TDSSC-value" value="Abnormal">
+            <input type="radio" name="tdsscs-value" value="Abnormal">
         </div>
-        <input type="text" id="TDSSC-description">
+        <input type="text" id="tdsscs-description">
     </div>
     <hr>
     <!--            PSYCH/ MENTAL HEALTH SURVEY-->
@@ -1175,17 +1175,17 @@
         <h3 class="row-header">Mood/ Affect:</h3>
         <div class="radio-group">
             <h4>Not Assessed</h4>
-            <input type="radio" name="mood-afect-value" value="Not Assessed">
+            <input type="radio" name="mood-affect-value" value="Not Assessed">
         </div>
         <div class="radio-group">
             <h4>WNL</h4>
-            <input type="radio" name="mood-afect-value" value="WNL">
+            <input type="radio" name="mood-affect-value" value="WNL">
         </div>
         <div class="radio-group">
             <h4>Abnormal</h4>
-            <input type="radio" name="mood-afect-value" value="Abnormal">
+            <input type="radio" name="mood-affect-value" value="Abnormal">
         </div>
-        <input type="text" id="mood-afect-description">
+        <input type="text" id="mood-affect-description">
     </div>
     <hr>
     <div class="form-row survey">
