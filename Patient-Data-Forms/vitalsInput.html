@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="../local/styles.css">
     <link rel="stylesheet" href="../local/formStyles.css">
 
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
 </head>
 <body>
 <header>
@@ -536,7 +538,7 @@
                     <option value="Other">Other</option>
                 </select>
                 <select name="percent-consumed" id="percent-consumed">
-                    <option value="% of Meal Consumed">% of Meal Consumed</option>
+                    <option value="default">% of Meal Consumed</option>
                     <option value="0% Consumed">0% Consumed</option>
                     <option value="10% Consumed">10% Consumed</option>
                     <option value="20% Consumed">20% Consumed</option>
@@ -725,17 +727,17 @@
                 <h3 class="row-header">Wounds/Breaks/Rash/Lesions:</h3>
                 <div class="radio-group">
                     <h4>Not Assessed</h4>
-                    <input type="radio" name="wrbl-value" value="Not Assessed">
+                    <input type="radio" name="wbrl-value" value="Not Assessed">
                 </div>
                 <div class="radio-group">
                     <h4>WNL</h4>
-                    <input type="radio" name="wrbl-value" value="WNL">
+                    <input type="radio" name="wbrl-value" value="WNL">
                 </div>
                 <div class="radio-group">
                     <h4>Abnormal</h4>
-                    <input type="radio" name="wrbl-value" value="Abnormal">
+                    <input type="radio" name="wbrl-value" value="Abnormal">
                 </div>
-                <input type="text" id="wrbl-description">
+                <input type="text" id="wbrl-description">
             </div>
             <hr>
             <div class="form-row survey">
@@ -776,17 +778,17 @@
                 <h3 class="row-header">Tugor/ Color/ Temperature:</h3>
                 <div class="radio-group">
                     <h4>Not Assessed</h4>
-                    <input type="radio" name="TCT-value" value="Not Assessed">
+                    <input type="radio" name="tct-value" value="Not Assessed">
                 </div>
                 <div class="radio-group">
                     <h4>WNL</h4>
-                    <input type="radio" name="TCT-value" value="WNL">
+                    <input type="radio" name="tct-value" value="WNL">
                 </div>
                 <div class="radio-group">
                     <h4>Abnormal</h4>
-                    <input type="radio" name="TCT-value" value="Abnormal">
+                    <input type="radio" name="tct-value" value="Abnormal">
                 </div>
-                <input type="text" id="TCT-description">
+                <input type="text" id="tct-description">
             </div>
             <hr>
             <div class="form-row survey">

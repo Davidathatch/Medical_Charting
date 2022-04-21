@@ -10,7 +10,7 @@ body {
     height: 100px;
     width: 100px;
     border-radius: 10px;
-    background: #99602a;
+    background: #183969;
     color: white;
     font-size: 1.5em;
     font-weight: bold;
@@ -18,7 +18,7 @@ body {
     border: none;
 }
 #vital-submit:hover{
-    background: #694316;
+    background: #0c1f3b;
 }
 .form-container {
     display: grid;
@@ -37,7 +37,7 @@ body {
     box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.25);
 }
 .container-header {
-    background-image: linear-gradient(to bottom right, #99602a, #99602a);
+    background-image: linear-gradient(to bottom right, #183969, #13305b);
     width: 100%;
     text-align: left;
     border-radius: 10px 10px 0 0;
