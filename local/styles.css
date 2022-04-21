@@ -1,8 +1,9 @@
 body {
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
     font-family: 'Source Sans 3', sans-serif;
+    overflow: hidden;
+    height: 100%;
 }
 
 /*GLANCE HEADER*/
@@ -48,6 +49,12 @@ header {
     align-self: center;
 }
 
+.patient-glance {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
 .patient-glance-content {
     font-weight: normal;
     font-size: 1.25em;
@@ -58,6 +65,26 @@ header {
 }
 
 /*CATEGORY CONTAINER*/
+main {
+    display: flex;
+    align-items: stretch;
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+    width: 100vw;
+}
+
+.form-overflow-container {
+    overflow-y: scroll;
+    height: 85vh;
+    width: 100vw;
+}
+
+.category-container {
+    width: 100%;
+    overflow-y: scroll;
+}
+
 .category-header {
     font-size: 3.5em;
     margin: 25px 0 0 2.5%;
@@ -69,6 +96,10 @@ header {
     margin: 0 0 0 5%;
     font-weight: bold;
     font-style: italic;
+}
+
+.sub-category {
+    height: 100%;
 }
 
 .sub-category-glance {
@@ -91,6 +122,7 @@ header {
     display: flex;
     justify-content: space-evenly;
     flex: 4;
+    align-self: center;
 }
 
 .glance-data h4 {
@@ -103,7 +135,7 @@ header {
 }
 
 .glance-button {
-    background: #398AB9;
+    background: #143058;
     border-radius: 10px;
     height: 1.75em;
     color: white;
@@ -116,4 +148,21 @@ header {
 .glance-button:hover {
     filter: brightness(.75);
     cursor: pointer;
+}
+
+.searchContainer {
+    position: absolute;
+    top: 0;
+    background: #EEEEEE;
+    height: 25%;
+    width: 25%;
+    border-radius: 5px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: center;
+}
+
+.searchContainer input{
+    align-self: start;
+    height: 15%;
 }

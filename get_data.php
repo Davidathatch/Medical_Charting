@@ -32,44 +32,55 @@
 
 <!--    STYLESHEET-->
     <link rel="stylesheet" href="local/styles.css">
+    <link rel="stylesheet" type="text/css" href="sidebarStyle.css">
+
+    <?php
+        include "local/sidebarReq.html"
+    ?>
 </head>
 <body>
 
     <?php
         $profilePath = "assets/empty-profile.png";
+        $headerLogoPath = "assets/catalyst-logo.png";
         include "local/patientGlanceHeader.php";
     ?>
 
-    <div class="category-container">
-        <h1 class="category-header">Vitals</h1>
-        <div class="sub-category">
-            <h2 class="sub-category-head">TPR B/P O2</h2>
-            <div class="sub-category-glance">
-                <h3 class="glance-date">03/25/2022</h3>
-                <div class="glance-data">
-                    <h4>Temperature: 97 F</h4>
-                    <h4>Respiration: 78</h4>
-                    <h4>Blood Pressure: 120</h4>
-                    <h4>Pulse Oximetry: 94%</h4>
+    <main>
+        <?php
+            include "sidebar.html"
+        ?>
+        <div class="category-container">
+            <h1 class="category-header">Vitals</h1>
+            <div class="sub-category">
+                <h2 class="sub-category-head">TPR B/P O2</h2>
+                <div class="sub-category-glance">
+                    <h3 class="glance-date">03/25/2022</h3>
+                    <div class="glance-data">
+                        <h4>Temperature: 97 F</h4>
+                        <h4>Respiration: 78</h4>
+                        <h4>Blood Pressure: 120</h4>
+                        <h4>Pulse Oximetry: 94%</h4>
+                    </div>
+                    <div class="flex-container">
+                        <button class="glance-button">View</button>
+                    </div>
                 </div>
-                <div class="flex-container">
-                    <button class="glance-button">View</button>
-                </div>
-            </div>
-            <div class="sub-category-glance">
-                <h3 class="glance-date">03/15/2022</h3>
-                <div class="glance-data">
-                    <h4>Temperature: 97 F</h4>
-                    <h4>Respiration: 78</h4>
-                    <h4>Blood Pressure: 120</h4>
-                    <h4>Pulse Oximetry: 94%</h4>
-                </div>
-                <div class="flex-container">
-                    <button class="glance-button">View</button>
+                <div class="sub-category-glance">
+                    <h3 class="glance-date">03/15/2022</h3>
+                    <div class="glance-data">
+                        <h4>Temperature: 97 F</h4>
+                        <h4>Respiration: 78</h4>
+                        <h4>Blood Pressure: 120</h4>
+                        <h4>Pulse Oximetry: 94%</h4>
+                    </div>
+                    <div class="flex-container">
+                        <button class="glance-button">View</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-
+    </main>
 </body>
+
 </html>

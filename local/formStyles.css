@@ -26,8 +26,6 @@ body {
                 "form-header"
                 "column-headers"
                 "form";
-}
-.form-container {
     width: 95%;
     margin: 15px auto 0 auto;
     background: #EEEEEE;
@@ -126,6 +124,18 @@ body {
     margin: 0 auto;
 }
 
+/*NEW ORDER GRID*/
+.column-header-container.new-order {
+    display: grid;
+    grid-template-columns: 1.25fr 4fr;
+    width: 80%;
+}
+.form-row.new-order {
+    display: grid;
+    grid-template-columns: 1.25fr 3fr 1fr;
+    width: 80%;
+}
+
 .radio-group {
     display: flex;
     flex-direction: row;
@@ -144,6 +154,7 @@ body {
 
 .column-header-container h3 {
     font-weight: bolder;
+    margin: 10px 0;
 }
 .form-row h3 {
     margin: 10px 0;
@@ -158,7 +169,10 @@ body {
     margin: 10px 0 10px 25px;
     color: white;
 }
-input[type=text], select {
+input[type=checkbox] {
+    align-self: center;
+}
+input[type=text], select, input[type=datetime-local] {
     margin: 5px 0 5px 0;
     border: #C4C4C4 solid 2px;
     border-radius: 5px;
@@ -180,7 +194,7 @@ option {
 .form-container hr {
     border:none;
     border-top: 2px dotted #c4c4c4;
-    margin: 0;
+    margin: 1px 0;
 }
 .pain-scale-container {
     padding: 0 10px;
@@ -188,4 +202,14 @@ option {
 .pain-scale-container {
     margin-top: 10px;
     text-align: center;
+}
+.horizontal-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    justify-self: start;
+}
+.horizontal-group *{
+    margin: 0 5px;
 }
