@@ -2,8 +2,75 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>Navigation Bar</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="sidebarStyle.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
 <body>
+    <nav class="sidebar">
+        <ul>
+            <li>
+                <a href="#" class="health-btn">Health
+                    <span class="fas fa-caret-down first"></span>
+                </a>
+                <ul class="health-show">
+                    <li><a href="#">Overview</a></li>
+                    <li><a href="#">Alerts</a></li>
+                    <li><a href="#">Prevention</a></li>
+                    <li><a href="#">Problems</a></li>
+                    <li><a href="#">Vitals</a></li>
+                    <li><a href="#">Orders</a></li>
+                    <li><a href="#">Meds</a></li>
+                    <li><a href="#">Notes</a></li>
+                    <li><a href="#">Care Plans</a></li>
+                    <li><a href="#">Labs</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" class="pharm-btn">Pharmacy
+                    <span class="fas fa-caret-down second"></span>
+                </a>
+                <ul class="pharm-show">
+                    <li><a href="#">Patient Profile</a></li>
+                    <li><a href="#">Med Profile</a></li>
+                    <li><a href="#">Rx Processing</a></li>
+                    <li><a href="#">Inpt Processing</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" class="acc-btn">Account
+                    <span class="fas fa-caret-down third"></span>
+                </a>
+                <ul class="acc-show">
+                    <li><a href="#">Registration</a></li>
+                    <li><a href="#">Encounters</a></li>
+                    <li><a href="#">Insurance</a></li>
+                    <li><a href="#">Scheduling</a></li>
+                    <li><a href="#">Correspondence</a></li>
+                    <li><a href="#">Claims</a></li>
+                    <li><a href="#">Leger</a></li>
+                    <li><a href="#">Reports</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
 
+    <script>
+        $('.health-btn').click(function() {
+            $('nav ul .health-show').toggleClass("show");
+            $('nav ul .first').toggleClass("rotate");
+        });
+        $('.pharm-btn').click(function() {
+            $('nav ul .pharm-show').toggleClass("show1");
+            $('nav ul .second').toggleClass("rotate");
+        });
+        $('.acc-btn').click(function() {
+            $('nav ul .acc-show').toggleClass("show2");
+            $('nav ul .third').toggleClass("rotate");
+        });
+    </script>
 </body>
 </html>
