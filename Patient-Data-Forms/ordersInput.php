@@ -8,11 +8,12 @@
     include "../local/sidebarReq.html"
     ?>
 
-    <link rel="stylesheet" href="../local/styles.css">
     <link rel="stylesheet" href="../local/formStyles.css">
+    <link rel="stylesheet" href="../local/styles.css">
 
     <script src="https://code.jquery.com/jquery-3.6.0.js"
             integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
 </head>
 <body>
 
@@ -46,8 +47,8 @@ include "../local/patientGlanceHeader.php";
                 <div class="form-row new-order">
                     <h3 class="row-header">Medication:</h3>
                     <div class="horizontal-group">
-                        <input type="text" id="medication-name" style="height: 80%">
-                        <button id="medication-search">Search</button>
+                        <input type="text" id="medication-name" style="height: 80%" readonly>
+                        <button id="medication-search" type="button">Search</button>
                     </div>
 
                 </div>
@@ -217,7 +218,7 @@ include "../local/patientGlanceHeader.php";
                 <div class="form-row new-order">
                     <h3 class="row-header">Status:</h3>
                     <select type="text" id="medication-status">
-                        <option value="default">Choose Frequency</option>
+                        <option value="default">Choose Status</option>
                         <?php
                         $statusValues = ['Expired',
                             'Discontinued',
@@ -319,12 +320,21 @@ include "../local/patientGlanceHeader.php";
     </div>
 </main>
 
-<div class="searchContainer" id="medSearch">
-    <input type="text" id="medSearchInput" placeholder="Search query...">
+<div class="searchContainer" id="medSearch" style="display: none;">
+    <img src="../assets/close.svg" alt="close icon" id="med-search-close">
+    <input type="text" id="medSearchInput" placeholder="Search query..." onkeyup="medSearch(this.value)"
+           style="margin: 10px auto">
+    <div class="center-div">
+        <h1 id="no-result-label">No Results</h1>
+    </div>
 
+    <div class="queryResultContainer">
+    </div>
 </div>
 
 <script src="../local/orderDataGather.js"></script>
+
+<script src="../local/ordersJs.js"></script>
 
 </body>
 </html>

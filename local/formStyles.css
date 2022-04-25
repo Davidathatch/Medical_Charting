@@ -213,3 +213,95 @@ option {
 .horizontal-group *{
     margin: 0 5px;
 }
+
+.searchContainer {
+    position: absolute;
+    top: 25%;
+    right: 25%;
+    background: #EEEEEE;
+    height: 50%;
+    width: 50%;
+    border-radius: 5px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.searchContainer input{
+    align-self: start;
+    height: 15%;
+    padding: 10px;
+}
+
+.queryResult {
+    display: flex;
+    justify-content: space-between;
+    background: #143058;
+    border-radius: 10px;
+    padding: 5px 10px;
+    width: 85%;
+    margin: 5px auto;
+    color: white;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.resultDataContainer h2 {
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.resultDataContainer h3 {
+    font-weight: normal;
+    font-style: italic;
+    font-size: .75em;
+}
+
+.resultDataContainer h4 {
+    font-weight: normal;
+    font-size: 1em;
+    margin: 15px 0 0 0;
+}
+
+.resultButtonContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 33%
+}
+
+.resultButtonContainer button {
+    height: 50%;
+    border-radius: 5px;
+    background: white;
+    color: #143058;
+    border: none;
+    box-shadow: none;
+    font-weight: bold;
+}
+
+.resultButtonContainer button:hover {
+    filter: brightness(.75);
+}
+
+.center-div h1 {
+    justify-self: center;
+    align-self: center;
+    color: gray;
+}
+
+.center-div {
+    height: 100%;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+#med-search-close {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 25px;
+    height: auto;
+    cursor: pointer;
+}
