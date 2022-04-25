@@ -136,6 +136,18 @@ body {
     width: 80%;
 }
 
+/*ORDER COMMENT GRID*/
+.column-header-container.order-comments {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 3fr;
+    width: 80%;
+}
+.form-row.order-comments {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 3fr;
+    width: 80%;
+}
+
 .radio-group {
     display: flex;
     flex-direction: row;
@@ -284,13 +296,13 @@ option {
     filter: brightness(.75);
 }
 
-.center-div h1 {
+#center-div h1 {
     justify-self: center;
     align-self: center;
     color: gray;
 }
 
-.center-div {
+#center-div {
     height: 100%;
     display: flex;
     align-content: center;

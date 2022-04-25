@@ -1,33 +1,67 @@
+let queryType = '';
+
 function medSearch(query) {
     //REMOVE ALL CURRENT QUERY RESULTS
     let currentResults = document.getElementsByClassName("queryResult");
-    for (let i=0; i< currentResults.length; i++) {
+    for (let i = 0; i < currentResults.length; i++) {
         currentResults[i].remove();
         i--;
     }
-    //IF QUERY IS PRESENT (INPUT NOT BLANK) SEND TO SERVER
-    if (query.length > 0) {
-        $.ajax({
-            type: 'POST',
-            url: '../server.php',
-            data: {medQuery: query},
-            success: function (response) {
-                //WHEN RESPONSE IS RECEIVED, TRY TO DECODE JSON AND RENDER RESULTS (JSON ONLY RETURNED WHEN VALUES ARE FOUND)
-                try {
-                    document.getElementById("no-result-label").style.display = "none";
-                    let parsedResponse = JSON.parse(response);
-                    for (let i=0; i<parsedResponse.length; i++){
-                        renderMedResult(parsedResponse[i])
+    if (queryType === 'medication') {
+        //IF QUERY IS PRESENT (INPUT NOT BLANK) SEND TO SERVER
+        if (query.length > 0) {
+            $.ajax({
+                type: 'POST',
+                url: '../server.php',
+                data: {medQuery: query},
+                success: function (response) {
+                    //WHEN RESPONSE IS RECEIVED, TRY TO DECODE JSON AND RENDER RESULTS (JSON ONLY RETURNED WHEN VALUES ARE FOUND)
+                    try {
+                        document.getElementById("center-div").style.display = "none";
+                        let parsedResponse = JSON.parse(response);
+                        if (parsedResponse.length > 0) {
+                            for (let i = 0; i < parsedResponse.length; i++) {
+                                renderMedResult(parsedResponse[i])
+                            }
+                        }
+                    } catch (e) {
+
                     }
-                }catch (e) {
-                    console.log(e);
                 }
-            }
-        })
-        //IF THE QUERY IS BLANK, UN-HIDE THE "No Results" TEXT
-    }else {
-        document.getElementById("no-result-label").style.display = "inline";
+            })
+            //IF THE QUERY IS BLANK, UN-HIDE THE "No Results" TEXT
+        } else {
+            document.getElementById("center-div").style.display = "flex";
+        }
+    } else if (queryType === 'author') {
+        if (query.length > 0) {
+            $.ajax({
+                type: 'POST',
+                url: '../server.php',
+                data: {authorQuery: query},
+                success: function (response) {
+                    //WHEN RESPONSE IS RECEIVED, TRY TO DECODE JSON AND RENDER RESULTS (JSON ONLY RETURNED WHEN VALUES ARE FOUND)
+                    try {
+                        document.getElementById("center-div").style.display = "none";
+                        let parsedResponse = JSON.parse(response);
+                        if (parsedResponse.length > 0) {
+                            for (let i = 0; i < parsedResponse.length; i++) {
+                                renderAuthorResult(parsedResponse[i]);
+                            }
+                        }
+                    } catch (e) {
+
+                    }
+                }
+            })
+        }else {
+            document.getElementById("center-div").style.display = "flex";
+        }
     }
+}
+
+function authorSearch(query) {
+
 }
 
 function renderMedResult(medData) {
@@ -62,17 +96,17 @@ function renderMedResult(medData) {
         document.getElementById("medSearchInput").value = '';
 
         let currentResults = document.getElementsByClassName("queryResult");
-        for (let i=0; i< currentResults.length; i++) {
+        for (let i = 0; i < currentResults.length; i++) {
             currentResults[i].remove();
             i--;
         }
 
-        document.getElementById("no-result-label").style.display = "inline";
+        document.getElementById("center-div").style.display = "flex";
 
         //REMOVE ANY CURRENT DOSAGE OPTIONS FROM DOSAGE DROPDOWN
         let currentDosageOptions = document.getElementById("dosage-amount").children;
-        if (currentDosageOptions.length > 1){
-            for (let i=1; i<currentDosageOptions.length; i++) {
+        if (currentDosageOptions.length > 1) {
+            for (let i = 1; i < currentDosageOptions.length; i++) {
                 currentDosageOptions[i].remove();
                 i--;
             }
@@ -80,7 +114,7 @@ function renderMedResult(medData) {
 
         //ADD ALL APPLICABLE DOSAGES TO THE DOSAGE DROPDOWN
         let dosageArr = medData["dosage"].split(',');
-        for (let i=0; i<dosageArr.length; i++) {
+        for (let i = 0; i < dosageArr.length; i++) {
             let newDosageOption = document.createElement("option");
             newDosageOption.value = dosageArr[i];
             newDosageOption.innerText = dosageArr[i];
@@ -97,17 +131,74 @@ function renderMedResult(medData) {
     document.getElementsByClassName("searchContainer")[0].append(result);
 }
 
+//RENDERS RESULTS FOR AUTHOR SEARCH FOR ADDITIONAL COMMENTS SECTION
+function renderAuthorResult(authorData) {
+    let result = document.createElement("div");
+    result.classList.add("queryResult");
+    result.style.padding = "15px 10px"
+
+    let dataContainer = document.createElement("div");
+    dataContainer.classList.add("resultDataContainer");
+
+    let medName = document.createElement("h2");
+    medName.innerText = authorData["firstName"] + " " + authorData["lastName"];
+
+    dataContainer.append(medName);
+
+    let buttonDiv = document.createElement("div");
+    buttonDiv.classList.add("resultButtonContainer");
+
+    let resultButton = document.createElement("button");
+    resultButton.innerText = "Select"
+    resultButton.addEventListener("click", function () {
+        //WHEN SELECT BUTTON IS CLICKED ENTER DRUG NAME INTO FORM, HIDE SEARCH CONTAINER, CLEAR TEXT INPUT, REMOVE
+        //QUERY RESULT ELEMENTS, AND SHOW THE "No Results" H1
+        document.getElementsByClassName("searchContainer")[0].style.display = "none";
+        document.getElementById("medSearchInput").value = '';
+
+        let currentResults = document.getElementsByClassName("queryResult");
+        for (let i = 0; i < currentResults.length; i++) {
+            currentResults[i].remove();
+            i--;
+        }
+
+        document.getElementById("center-div").style.display = "flex";
+    })
+    buttonDiv.append(resultButton);
+
+    result.append(dataContainer);
+    result.append(buttonDiv);
+
+
+    document.getElementsByClassName("searchContainer")[0].append(result);
+}
+
 //WHEN SEARCH BUTTON IN ORDERS FORM IS CLICKED, DISPLAY MED-SEARCH CONTAINER
-document.getElementById("medication-search").addEventListener("click", function() {
+document.getElementById("medication-search").addEventListener("click", function () {
     document.getElementsByClassName("searchContainer")[0].style.display = "flex";
+    queryType = 'medication';
+})
+
+document.getElementById("author-search").addEventListener("click", function () {
+    document.getElementsByClassName("searchContainer")[0].style.display = "flex";
+    queryType = 'author';
 })
 
 //WHEN CLOSE ICON IS CLICKED, HIDE THE MED-SEARCH CONTAINER
-document.getElementById("med-search-close").addEventListener("click", function() {
+document.getElementById("med-search-close").addEventListener("click", function () {
     document.getElementsByClassName("searchContainer")[0].style.display = "none";
+    document.getElementById("medSearchInput").value = '';
+
+    let currentResults = document.getElementsByClassName("queryResult");
+    for (let i = 0; i < currentResults.length; i++) {
+        currentResults[i].remove();
+        i--;
+    }
+
+    document.getElementById("center-div").style.display = "flex";
 })
 
-function getData () {
+function getData() {
     let postValues = {};
 
     postValues["orderDate"] = quickId("new-order-date");
@@ -135,7 +226,7 @@ function getData () {
 //Takes id of HTML input element as parameter, returns value of element if not empty; if empty, it returns null
 function quickId(elementId) {
     if (document.getElementById(elementId).value !== "" && document.getElementById(elementId).value !== "default") {
-        return  document.getElementById(elementId).value;
+        return document.getElementById(elementId).value;
     } else {
         return null;
     }
@@ -146,7 +237,7 @@ function quickId(elementId) {
 function quickRadio(elementName) {
     let radioButtons = document.getElementsByName(elementName);
 
-    for (let i=0; i<radioButtons.length; i++) {
+    for (let i = 0; i < radioButtons.length; i++) {
         if (radioButtons[i].checked === true) {
             return radioButtons[i].value;
         }

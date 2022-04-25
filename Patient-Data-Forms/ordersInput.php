@@ -311,9 +311,34 @@ include "../local/patientGlanceHeader.php";
                     </select>
                 </div>
                 <hr>
-                <div class="form-row new-order">
-                    <h3 class="row-header">Additional Comments:</h3>
-                    <textarea name="medication-comments" id="medication-comments" cols="32" rows="2"></textarea>
+            </form>
+        </div>
+        <div class="form-container order-comments">
+            <div class="container-header order-comments" style="grid-area: form-header">
+                <h2>Additional Comments</h2>
+            </div>
+            <div class="column-header-container order-comments" style="grid-area: column-headers">
+                <h3 class="column-header" style="grid-column: 1">Date</h3>
+                <h3 class="column-header" style="grid-column: 2">Author</h3>
+                <h3 class="column-header" style="grid-column: 3">Comment</h3>
+            </div>
+            <form action="server.php" method="post" style="grid-area: form" class="order-comments-form">
+                <hr>
+                <div class="form-row order-comments">
+                    <input type="datetime-local" class="order-comment-date">
+                    <div class="horizontal-group">
+                        <input type="text" id="order-comment-author" style="height: 80%" readonly>
+                        <button id="author-search" type="button">Search</button>
+                    </div>
+                    <textarea name="medication-comments" id="order-comment-text" cols="32" rows="2"></textarea>
+                </div>
+                <hr>
+                <div class="form-row order-comments">
+                    <h3>4/25/2022</h3>
+                    <h3>David Thatcher</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam blanditiis eos, hic ipsam ipsum
+                        neque nihil, non odit placeat qui quisquam quos sit voluptate! Nulla numquam perferendis placeat
+                        quasi repellendus sequi ullam velit voluptatem voluptatum.</p>
                 </div>
             </form>
         </div>
@@ -324,7 +349,7 @@ include "../local/patientGlanceHeader.php";
     <img src="../assets/close.svg" alt="close icon" id="med-search-close">
     <input type="text" id="medSearchInput" placeholder="Search query..." onkeyup="medSearch(this.value)"
            style="margin: 10px auto">
-    <div class="center-div">
+    <div id="center-div">
         <h1 id="no-result-label">No Results</h1>
     </div>
 
