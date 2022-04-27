@@ -115,4 +115,9 @@ if (isset($_POST["authorQuery"])) {
         echo 'empty';
     }
 }
+
+if (isset($_POST["orderComment"])) {
+    $decodedArr = json_decode($_POST["orderComment"], true);
+    print_r($decodedArr);
+}
 ?>

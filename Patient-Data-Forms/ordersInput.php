@@ -325,12 +325,15 @@ include "../local/patientGlanceHeader.php";
             <form action="server.php" method="post" style="grid-area: form" class="order-comments-form">
                 <hr>
                 <div class="form-row order-comments">
-                    <input type="datetime-local" class="order-comment-date">
+                    <input type="datetime-local" id="order-comment-date">
                     <div class="horizontal-group">
                         <input type="text" id="order-comment-author" style="height: 80%" readonly>
                         <button id="author-search" type="button">Search</button>
                     </div>
-                    <textarea name="medication-comments" id="order-comment-text" cols="32" rows="2"></textarea>
+                    <div class="horizontal-group">
+                        <textarea name="medication-comments" id="order-comment-text" cols="32" rows="2" style="flex: 3"></textarea>
+                        <button class="glance-button" id="comment-submit" type="button" style="flex: 1">Submit</button>
+                    </div>
                 </div>
                 <hr>
                 <div class="form-row order-comments">

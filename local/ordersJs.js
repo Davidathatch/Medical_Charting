@@ -60,10 +60,6 @@ function medSearch(query) {
     }
 }
 
-function authorSearch(query) {
-
-}
-
 function renderMedResult(medData) {
 
     let result = document.createElement("div");
@@ -154,7 +150,7 @@ function renderAuthorResult(authorData) {
         //WHEN SELECT BUTTON IS CLICKED ENTER DRUG NAME INTO FORM, HIDE SEARCH CONTAINER, CLEAR TEXT INPUT, REMOVE
         //QUERY RESULT ELEMENTS, AND SHOW THE "No Results" H1
         document.getElementsByClassName("searchContainer")[0].style.display = "none";
-        document.getElementById("medSearchInput").value = '';
+        document.getElementById("order-comment-author").value = authorData["firstName"] + ' ' + authorData["lastName"];
 
         let currentResults = document.getElementsByClassName("queryResult");
         for (let i = 0; i < currentResults.length; i++) {
@@ -162,6 +158,7 @@ function renderAuthorResult(authorData) {
             i--;
         }
 
+        document.getElementById("medSearchInput").value = '';
         document.getElementById("center-div").style.display = "flex";
     })
     buttonDiv.append(resultButton);
@@ -221,6 +218,31 @@ function getData() {
     postValues["orderSubstitution"] = quickRadio("substitution-allowed");
     postValues["orderDAW"] = quickId("daw-value");
     postValues["orderComments"] = quickId("medication-comments");
+
+    //TODO POST DATA ACCORDING TO TYPE OF DATA (PRESCRIPTION, HOME MEDS, ETC.)
+
+    // $.ajax({
+    //     type: 'POST',
+    //     url: '../server.php',
+    //     data: {}
+    // });
+}
+
+function getCommentData() {
+    let commentValues = {};
+
+    commentValues["commentDate"] = quickId("order-comment-date");
+    commentValues["commentAuthor"] = quickId("order-comment-author");
+    commentValues["commentBody"] = quickId("order-comment-text");
+
+    $.ajax({
+       type: 'POST',
+       url: '../server.php',
+       data: {orderComment: JSON.stringify(commentValues)},
+       success: function(response) {
+           console.log(response);
+       }
+    });
 }
 
 //Takes id of HTML input element as parameter, returns value of element if not empty; if empty, it returns null
@@ -244,3 +266,8 @@ function quickRadio(elementName) {
     }
     return null;
 }
+
+//WHEN SUBMIT COMMENT BUTTON IS CLICKED, SEND DATA TO SERVER
+document.getElementById("comment-submit").addEventListener("click", function () {
+    getCommentData();
+})

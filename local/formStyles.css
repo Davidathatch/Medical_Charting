@@ -139,12 +139,12 @@ body {
 /*ORDER COMMENT GRID*/
 .column-header-container.order-comments {
     display: grid;
-    grid-template-columns: 1fr 1.5fr 3fr;
+    grid-template-columns: 1fr 1.5fr 4fr;
     width: 80%;
 }
 .form-row.order-comments {
     display: grid;
-    grid-template-columns: 1fr 1.5fr 3fr;
+    grid-template-columns: 1fr 1.5fr 4fr;
     width: 80%;
 }
 
@@ -221,6 +221,7 @@ option {
     align-items: center;
     justify-content: space-evenly;
     justify-self: start;
+    width: 95%;
 }
 .horizontal-group *{
     margin: 0 5px;
