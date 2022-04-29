@@ -318,3 +318,70 @@ option {
     height: auto;
     cursor: pointer;
 }
+
+/*LOGIN PAGE STYLES*/
+.login-container {
+    background: #EEEEEE;
+    border-radius: 10px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.25);
+    width: 40%;
+    height: 30%;
+    position: absolute;
+    right: 30%;
+    top: 35%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.login-content {
+    min-width: 100%;
+    display: grid;
+    grid-template-rows: 2fr 1fr 1fr;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-content: center;
+}
+
+.horizontal-group.around {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 75%;
+    margin: 0 auto;
+}
+
+.horizontal-group.button-end button{
+    height: 50%;
+    width: 25%;
+    flex: .5fr;
+    margin: 0 0 0 10px;
+}
+
+#login-password {
+    width: 3fr;
+}
+
+.login-content h1 {
+    font-size: 2.5em;
+    color: #143058;
+}
+
+.login-content > div, .login-content input{
+    margin: 0 0 0 10px;
+}
+
+.login-content input {
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.25);
+    vertical-align: center;
+}
+
+.login-container img {
+    width: 75px;
+}
+
+@media (max-height: 800px) {
+    .login-container {
+        height: 50%;
+    }
+}
