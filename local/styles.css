@@ -132,9 +132,11 @@ main {
 .flex-container {
     flex: 1;
     align-self: center;
+    display: flex;
+    justify-content: space-evenly;
 }
 
-.glance-button {
+.glance-button, .glance-delete {
     background: #143058;
     border-radius: 10px;
     height: 1.75em;
@@ -143,9 +145,20 @@ main {
     border: none;
     width: 50%;
     float: right;
+    margin: 0 5px;
 }
 
 .glance-button:hover {
+    filter: brightness(.75);
+    cursor: pointer;
+}
+
+.glance-delete {
+    background: #ffffff;
+    color: #143058;
+}
+
+.glance-delete:hover {
     filter: brightness(.75);
     cursor: pointer;
 }

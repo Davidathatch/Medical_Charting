@@ -40,6 +40,16 @@ include "../local/patientGlanceHeader.php";
             <form action="server.php" method="post" style="grid-area: form" class="tpr-form">
                 <hr>
                 <div class="form-row new-order">
+                    <h3 class="row-header">Order Type</h3>
+                    <select id="order-type">
+                        <option value="default">Choose order type</option>
+                        <option value="Prescription">Prescription</option>
+                        <option value="Home Meds">Home Meds</option>
+                        <option value="Infusion Meds">Infusion Meds</option>
+                    </select>
+                </div>
+                <hr>
+                <div class="form-row new-order">
                     <h3 class="row-header">Date:</h3>
                     <input type="datetime-local" id="new-order-date">
                 </div>
@@ -360,9 +370,10 @@ include "../local/patientGlanceHeader.php";
     </div>
 </div>
 
+<button id="orders-submit">Submit</button>
+
 <script src="../local/orderDataGather.js"></script>
 
 <script src="../local/ordersJs.js"></script>
-
 </body>
 </html>

@@ -64,6 +64,7 @@
                     </div>
                     <div class="flex-container">
                         <button class="glance-button">View</button>
+                        <button class="glance-delete">Delete</button>
                     </div>
                 </div>
                 <div class="sub-category-glance">
@@ -76,6 +77,7 @@
                     </div>
                     <div class="flex-container">
                         <button class="glance-button">View</button>
+                        <button class="glance-delete">Delete</button>
                     </div>
                 </div>
             </div>
