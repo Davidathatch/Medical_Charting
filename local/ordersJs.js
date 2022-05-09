@@ -1,5 +1,62 @@
 let queryType = '';
 
+let prescriptionData = [
+    "new-order-date",
+    "new-order-provider",
+    "medication-name",
+    "display-name",
+    "dosage-amount",
+    "include-dea-npi",
+    "resistant-caps",
+    "medication-route",
+    "medication-frequency",
+    "medication-directions",
+    "dispense-quantity",
+    "medication-status",
+    "start-date",
+    "end-date",
+    "ndc",
+    "rx-origin",
+    "days-supply",
+    "refills-value",
+    "substitution-allowed",
+    "daw-value"
+];
+
+let homeMedsData = [
+    "new-order-date",
+    "new-order-provider",
+    "medication-name",
+    "alternative-name",
+    "dosage-amount",
+    "include-dea-npi",
+    "medication-route",
+    "medication-details",
+    "medication-frequency",
+    "medication-status",
+    "start-date",
+    "end-date",
+];
+
+let infusionMedsData = [
+    "new-order-date",
+    "new-order-provider",
+    "solution",
+    "solution-volume",
+    "solution-rate",
+    "number-of-bags",
+    "additive",
+    "alternate-name",
+    "include-dea-npi",
+    "medication-route",
+    "medication-details",
+    "medication-due",
+    "medication-frequency",
+    "medication-status",
+    "start-date",
+    "end-date",
+];
+
 function medSearch(query) {
     //REMOVE ALL CURRENT QUERY RESULTS
     let currentResults = document.getElementsByClassName("queryResult");

@@ -14,6 +14,9 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="formStyles.css">
 
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+            integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
     <title>Charting Login</title>
 </head>
 <body style="background-image: linear-gradient(to bottom right, #143058, #061126);">
@@ -33,6 +36,36 @@
         </div>
     </div>
 </div>
+
+<script>
+    let loginButton = document.getElementsByClassName("login-submit")[0];
+    loginButton.addEventListener("click", submitLogin);
+    document.addEventListener("keydown", function(e) {
+        if (e.key === 'Enter') {
+            submitLogin();
+        }
+    })
+
+    function submitLogin() {
+        let loginInput = {
+            "username": document.getElementById("login-username").value,
+            "password": document.getElementById("login-password").value,
+        }
+        $.ajax({
+            type: 'POST',
+            url: '../auth.php',
+            data: {loginData: JSON.stringify(loginInput)},
+            success: function(response) {
+                let decodedServRes = JSON.parse(response);
+                if (decodedServRes["code"] === 1) {
+                    window.location.href = "/Medical_Charting/get_data.php"
+                } else {
+                    console.log("Try Again");
+                }
+            }
+        })
+    }
+</script>
 
 </body>
 </html>

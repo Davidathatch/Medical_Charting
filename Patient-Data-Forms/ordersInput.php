@@ -60,7 +60,11 @@ include "../local/patientGlanceHeader.php";
                         <input type="text" id="medication-name" style="height: 80%" readonly>
                         <button id="medication-search" type="button">Search</button>
                     </div>
-
+                </div>
+                <hr>
+                <div class="form-row new-order">
+                    <h3 class="row-header">Alternative Name:</h3>
+                    <input type="text" id="alternative-name">
                 </div>
                 <hr>
                 <div class="form-row new-order">
@@ -98,6 +102,11 @@ include "../local/patientGlanceHeader.php";
                         }
                         ?>
                     </select>
+                </div>
+                <hr>
+                <div class="form-row new-order">
+                    <h3 class="row-header">Order Details:</h3>
+                    <textarea id="medication-details" cols="20" rows="2"></textarea>
                 </div>
                 <hr>
                 <div class="form-row new-order">
